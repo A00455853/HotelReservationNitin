@@ -5,9 +5,9 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margin"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:layout_margin="@dimen/layout_margin"
     tools:context=".hotels.HotelsFragment">
 
     <TextView
@@ -17,20 +17,18 @@
         android:layout_marginTop="@dimen/check_in_button_top_margin"
         android:text="@string/user_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/userNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/label_date_distance"
-        android:inputType="number"
         android:hint="@string/user_name"
-        app:layout_constraintStart_toEndOf="@id/userNameLabelTextView"
-        app:layout_constraintTop_toTopOf="@id/userNameLabelTextView"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/userNameLabelTextView"
-        />
+        app:layout_constraintStart_toEndOf="@id/userNameLabelTextView"
+        app:layout_constraintTop_toTopOf="@id/userNameLabelTextView" />
 
     <TextView
         android:id="@+id/checkInDateLabelTextView"
@@ -39,8 +37,7 @@
         android:layout_marginTop="@dimen/check_in_button_top_margin"
         android:text="@string/check_in_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameLabelTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/userNameLabelTextView" />
 
     <TextView
         android:id="@+id/checkInDateDisplayTextView"
@@ -58,8 +55,7 @@
         android:layout_marginTop="@dimen/checkout_date_top_margin"
         android:text="@string/check_in_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkInDateLabelTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkInDateLabelTextView" />
 
     <TextView
         android:id="@+id/checkOutDateDisplayTextView"
@@ -74,8 +70,8 @@
         android:id="@+id/numberOfGuestsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_guests"
         android:layout_marginTop="@dimen/checkout_date_top_margin"
+        android:text="@string/number_of_guests"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkOutDateLabelTextView" />
 
@@ -91,15 +87,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
-        android:layout_marginTop="@dimen/checkout_date_top_margin"
         android:name="com.example.hotelreservationnitin.guestdetail.GuestDetailFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/numberOfGuestsTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numberOfGuestsTextView"
-        app:layout_constraintBottom_toTopOf="@id/nextButton"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
         app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/numberOfGuestsTextView"
+        app:layout_constraintTop_toBottomOf="@id/numberOfGuestsTextView"
         tools:context=".guestdetail.GuestDetailFragment"
         tools:listitem="@layout/guest_detail_item" />
 
@@ -108,20 +104,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book Hotel"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteX="254dp"
         tools:layout_editor_absoluteY="620dp" />
 
     <ProgressBar
         android:id="@+id/progress_circular"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".guestdetail.GuestDetailFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

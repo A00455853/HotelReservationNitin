@@ -30,7 +30,7 @@ class GuestDetailRecyclerViewAdapter(
         val item = values[position]
         holder.nameView.setText(item.name)
         holder.ageView.setText(item.age.toString())
-
+///
         holder.nameView.doAfterTextChanged { item.name = it.toString() }
         holder.ageView.doAfterTextChanged {
             if (it.toString().isNotEmpty())

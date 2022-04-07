@@ -60,6 +60,8 @@ class HotelRecyclerViewAdapter(
         val price: TextView = binding.price
         val rating: TextView = binding.rating
         val city: TextView = binding.city
+
+        // same as find view as id
     }
 
 }

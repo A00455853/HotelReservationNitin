@@ -10,8 +10,8 @@ import retrofit2.http.*
 interface ApiInterface {
 
     // all hotels
-    @GET("listHotel/{checkindate}/{checkoutdate}")
-    suspend fun getHotelsList(@Path("checkindate") String checkindate,@Path("checkindate") String checkindate) : Response<List<Hotel>>
+    @GET("all")
+    suspend fun getHotelsList() : Response<List<Hotel>>
 
     // book a room
     @Headers("Content-Type: application/json")
