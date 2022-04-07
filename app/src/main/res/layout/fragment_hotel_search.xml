@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margin"
+    tools:context=".search.HotelSearchFragment">
+
+    <TextView
+        android:id="@+id/checkInDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/check_in_button_top_margin"
+        android:text="@string/check_in_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/checkInDateDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_date_distance"
+        android:text="DD/MM/YY"
+        app:layout_constraintStart_toEndOf="@id/checkInDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@id/checkInDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/checkOutDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_out_date"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkInDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/checkOutDateDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="DD/MM/YY"
+        app:layout_constraintStart_toEndOf="@id/checkInDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/checkOutDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/numOfGuestsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_out_date"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkOutDateLabelTextView" />
+
+    <EditText
+        android:id="@+id/numOfGuestsEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="1"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/checkInDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/numOfGuestsLabelTextView" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:layout_marginTop="@dimen/search_button_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numOfGuestsEditText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

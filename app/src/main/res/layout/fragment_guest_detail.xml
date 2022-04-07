@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_margin="@dimen/layout_margin"
+    tools:context=".hotels.HotelsFragment">
+
+    <TextView
+        android:id="@+id/userNameLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/check_in_button_top_margin"
+        android:text="@string/user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/userNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_date_distance"
+        android:inputType="number"
+        android:hint="@string/user_name"
+        app:layout_constraintStart_toEndOf="@id/userNameLabelTextView"
+        app:layout_constraintTop_toTopOf="@id/userNameLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/userNameLabelTextView"
+        />
+
+    <TextView
+        android:id="@+id/checkInDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/check_in_button_top_margin"
+        android:text="@string/check_in_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userNameLabelTextView"
+        />
+
+    <TextView
+        android:id="@+id/checkInDateDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_date_distance"
+        android:hint="DD/MM/YY"
+        app:layout_constraintStart_toEndOf="@id/checkInDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@id/checkInDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/checkOutDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
+        android:text="@string/check_in_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkInDateLabelTextView"
+        />
+
+    <TextView
+        android:id="@+id/checkOutDateDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_date_distance"
+        android:hint="DD/MM/YY"
+        app:layout_constraintStart_toEndOf="@id/checkOutDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@id/checkOutDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/numberOfGuestsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_of_guests"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkOutDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/numberOfGuestsDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:hint="0"
+        app:layout_constraintStart_toEndOf="@id/numberOfGuestsTextView"
+        app:layout_constraintTop_toTopOf="@+id/numberOfGuestsTextView" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_marginTop="@dimen/checkout_date_top_margin"
+        android:name="com.example.hotelreservationnitin.guestdetail.GuestDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/numberOfGuestsTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberOfGuestsTextView"
+        app:layout_constraintBottom_toTopOf="@id/nextButton"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".guestdetail.GuestDetailFragment"
+        tools:listitem="@layout/guest_detail_item" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Hotel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="620dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:context=".guestdetail.GuestDetailFragment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

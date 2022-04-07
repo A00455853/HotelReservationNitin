@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="checkout_date_top_margin">20dp</dimen>
+    <dimen name="layout_margin">16dp</dimen>
+    <dimen name="label_date_distance">100dp</dimen>
+    <dimen name="check_in_button_top_margin">50dp</dimen>
+    <dimen name="search_button_top_margin">50dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+</resources>

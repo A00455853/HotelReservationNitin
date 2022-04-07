@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Hotel Reservation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="check_in_date">Check in Date</string>
+    <string name="check_out_date">Checkout Date</string>
+    <string name="search">search</string>
+    <string name="hotel_list_sub_title">Showing list of hotels for %1$d guests and check in date :  %2$s , check out date : %3$s</string>
+    <string name="user_name">User name</string>
+    <string name="male">MALE</string>
+    <string name="female">FEMALE</string>
+    <string name="name">Name</string>
+    <string name="age">age</string>
+    <string name="congratulation">Congratulation!!! \nYour Room Has been booked.</string>
+    <string name="number_of_guests">Number of Guests</string>
+    <string name="booking_ref_number">"Booking Reference Number is %1$s"</string>
+</resources>

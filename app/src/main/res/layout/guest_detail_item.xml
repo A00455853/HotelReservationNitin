@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/name"
+        android:hint="@string/name"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:inputType="text"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <EditText
+        android:id="@+id/age"
+        android:hint="@string/age"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/text_margin"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <RadioGroup
+        android:id="@+id/genderRadioGroup"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/maleRadioButton"
+            android:text="@string/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/femaleRadioButton"
+            android:text="@string/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </RadioButton>
+
+    </RadioGroup>
+
+</LinearLayout>
