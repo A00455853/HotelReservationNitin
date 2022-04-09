@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        clearData()
         hotelSearchFragment = HotelSearchFragment.newInstance()
         navigateToFragment(hotelSearchFragment, false)
     }
@@ -42,5 +42,26 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             month = month,
             dayOfMonth = dayOfMonth
         )
+    }
+
+
+    private fun clearData() {
+        val sharedPreferences =
+            getSharedPreferences(SharedPrefHelper.SHARED_PREF_FILE, MODE_PRIVATE)
+
+        val editor = sharedPreferences?.edit()
+
+        editor?.putInt(SharedPrefHelper.CHECK_IN_DATE_YEAR, 0)
+        editor?.putInt(SharedPrefHelper.CHECK_IN_DATE_MONTH, 0)
+        editor?.putInt(SharedPrefHelper.CHECK_IN_DATE_DAY, 0)
+
+        editor?.putInt(SharedPrefHelper.CHECK_OUT_DATE_YEAR, 0)
+        editor?.putInt(SharedPrefHelper.CHECK_OUT_DATE_MONTH, 0)
+        editor?.putInt(SharedPrefHelper.CHECK_OUT_DATE_DAY, 0)
+
+        editor?.putInt(SharedPrefHelper.NUMBER_OF_GUESTS, 0)
+
+        editor?.commit()
+
     }
 }
