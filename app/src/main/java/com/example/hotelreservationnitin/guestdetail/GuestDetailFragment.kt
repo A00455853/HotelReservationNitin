@@ -1,16 +1,17 @@
 package com.example.hotelreservationnitin.guestdetail
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.Toast.LENGTH_LONG
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hotelreservationnitin.MainActivity
 import com.example.hotelreservationnitin.R
 import com.example.hotelreservationnitin.ReservationDate
@@ -24,6 +25,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.time.Duration
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 /**
  * A fragment representing a list of Items.
@@ -34,6 +39,7 @@ class GuestDetailFragment : Fragment() {
     private var guestDetailList : MutableList<GuestDetail> = mutableListOf()
     private lateinit var userNameEditText : EditText
     private var progressBar : ProgressBar? = null
+    private var hotelprice : Float =0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,21 +136,23 @@ class GuestDetailFragment : Fragment() {
             val checkOutYear = it.getInt(SharedPrefHelper.CHECK_OUT_DATE_YEAR, 0)
             val checkOutMonth = it.getInt(SharedPrefHelper.CHECK_OUT_DATE_MONTH, 0)
             val checkOutDay = it.getInt(SharedPrefHelper.CHECK_OUT_DATE_DAY, 0)
+            hotelprice = it.getFloat(SharedPrefHelper.HOTEL_PRICE,0f)
 
             val checkInDate = ReservationDate(checkInYear, checkInMonth, checkInDay)
             val checkOutDate = ReservationDate(checkOutYear, checkOutMonth, checkOutDay)
+
 
             dateFrom = checkInDate.toString()
             dateTo = checkOutDate.toString()
 
         }
-
+          //  var price = getTotalPrice(dateFrom,dateTo,hotelprice)
         val bookRoom = BookRoom(
             userid = Integer.parseInt(userNameEditText.text.toString()),
             room_id = 0,
-            date_from = "2022-03-15",//dateFrom,
-            date_to = "2022-03-20",//dateTo,
-            total_price = 0f,
+            date_from = dateFrom,// "2022-03-15"
+            date_to = dateTo,// "2022-03-20"
+            total_price = hotelprice,
             guestList = guestDetailList
         )
         progressBar?.visibility = View.VISIBLE
@@ -178,6 +186,24 @@ class GuestDetailFragment : Fragment() {
         }
         return true
     }
+//    @SuppressLint("NewApi")
+//    private fun getTotalPrice(fromdate: String, toDate:String, price:Float):Float{
+//        val dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+//
+//
+//        try {
+//            val date1: LocalDate? = LocalDate.parse(fromdate, dtf)
+//            val date2: LocalDate? = LocalDate.parse(toDate, dtf)
+//            val daysBetween: Long = Duration.between(date1, date2).toDays()
+//           // println("Days: $daysBetween")
+//            return price*daysBetween
+//        } catch (e: Exception) {
+//            return price
+//        }
+//
+//
+//
+//    }
 
     companion object {
 
@@ -193,4 +219,7 @@ class GuestDetailFragment : Fragment() {
                 }
             }
     }
+
+
+
 }
