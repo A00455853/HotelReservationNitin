@@ -80,6 +80,8 @@ class HotelSearchFragment : Fragment() {
 
     }
 
+
+
     private fun validateData() : Boolean {
         if (checkInDate == null) {
             Toast.makeText(requireContext(), "Please provide Check in Date", Toast.LENGTH_LONG).show()
@@ -117,10 +119,10 @@ class HotelSearchFragment : Fragment() {
 
     fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         if (isCheckInDate) {
-            checkInDate = ReservationDate(year, month, dayOfMonth)
+            checkInDate = ReservationDate(year, month+1, dayOfMonth)
             checkInDateTextView.text = checkInDate!!.getDate()
         } else {
-            checkOutDate = ReservationDate(year, month, dayOfMonth)
+            checkOutDate = ReservationDate(year, month+1, dayOfMonth)
             checkOutDateTextView.text = checkOutDate!!.getDate()
         }
         isCheckInDate = false
