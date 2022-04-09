@@ -12,4 +12,5 @@ object SharedPrefHelper {
     const val CHECK_OUT_DATE_DAY = " check_out_date_day"
 
     const val NUMBER_OF_GUESTS = " number_of_guests"
+    const val HOTEL_PRICE ="hotel_price"
 }
