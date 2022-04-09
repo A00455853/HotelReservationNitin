@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
 
-    val baseUrl = "http://ec2-100-24-60-38.compute-1.amazonaws.com:8081/demo/hoteldemo/"
+    val baseUrl = "http://ec2-44-203-96-7.compute-1.amazonaws.com:8080/demo/hoteldemo/"
 
     val interceptor : HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

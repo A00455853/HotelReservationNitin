@@ -49,10 +49,11 @@
         android:id="@+id/numOfGuestsLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/check_out_date"
+        android:text="@string/num_of_guest"
         android:layout_marginTop="@dimen/checkout_date_top_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkOutDateLabelTextView" />
+
 
     <EditText
         android:id="@+id/numOfGuestsEditText"

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         hotelSearchFragment = HotelSearchFragment.newInstance()
         navigateToFragment(hotelSearchFragment, false)
     }
-
+// medthod to perform the fragment txn
     fun navigateToFragment(fragment: Fragment, addToBackStack: Boolean) {
         // Begin the transaction
         val fragmentTransaction = supportFragmentManager.beginTransaction()
