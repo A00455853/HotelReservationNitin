@@ -3,11 +3,27 @@ package com.example.hotelreservationnitin
 class ReservationDate(val year: Int, val month: Int, val day: Int) {
 
     fun getDate () : String {
-        return ""+ day + "/" + month + "/"+year
+        var dayString = ""+day
+        var monthString =""+month
+        if(day<10) {
+             dayString = "0" + day
+        }
+        if(month<10){
+             monthString ="0"+month
+        }
+        return ""+ dayString + "/" + monthString + "/"+year
     }
 
     override fun toString () : String {
-        return ""+ year + "-" + month + "-"+day
+        var dayString = ""+day
+        var monthString =""+month
+        if(day<10) {
+            dayString = "0" + day
+        }
+        if(month<10){
+            monthString ="0"+month
+        }
+        return ""+ year + "-" + monthString + "-"+dayString
     }
 
     operator fun compareTo(date: ReservationDate): Int {
