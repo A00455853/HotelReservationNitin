@@ -88,11 +88,24 @@ class HotelsFragment : Fragment(), OnHotelListItemClickListener {
 
         nextButton.setOnClickListener {
             if (validateData()) {
+                saveData()
                 (activity as MainActivity).navigateToFragment(GuestDetailFragment.newInstance(1), true)
             }
         }
 
         return view
+    }
+    private fun saveData() {
+        val sharedPreferences =
+            activity?.getSharedPreferences(SharedPrefHelper.SHARED_PREF_FILE, Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences?.edit()
+
+        editor?.putFloat(SharedPrefHelper.HOTEL_PRICE, selectedHotel!!.rooms[0].price)
+
+
+        editor?.commit()
+
     }
 
     private fun setSubTitle() {
